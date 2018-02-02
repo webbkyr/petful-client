@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Pet from './Pet'
+import { fetchDog, fetchCat } from '../actions/index';
 
 
 export class Dashboard extends Component {
   componentDidMount() {
-    //fetch cats and dogs
+    this.props.dispatch(fetchDog());
+    this.props.dispatch(fetchCat());
   }
 
   handleAdopt(){
@@ -20,5 +23,10 @@ export class Dashboard extends Component {
     )
   }
 }
+// const mapStateToProps = state => {
+//   return (
 
-export default Dashboard;
+//   )
+// }
+
+export default connect()(Dashboard);
