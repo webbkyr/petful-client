@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
+import store from './store'
+import { Provider } from 'react-redux';
 import Dashboard from './components/Dashboard';
 
 //need to be in redux store
@@ -29,5 +31,9 @@ const dogs = [
   }
 ]
 
-ReactDOM.render(<Dashboard catToAdopt={cats[0]} dogToAdopt={dogs[0]} />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <Dashboard catToAdopt={cats[0]} dogToAdopt={dogs[0]} />
+  </Provider>,document.getElementById('root'));
+
 registerServiceWorker();
