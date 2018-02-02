@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import Cats from './Cats';
-// import Dogs from './Dogs';
 import Pet from './Pet'
 
 
@@ -9,11 +7,15 @@ export class Dashboard extends Component {
     //fetch cats and dogs
   }
 
+  handleAdopt(){
+    console.log('onAdoptPet!')
+  }
+
   render() {
     return (
     <div>
-        <Pet info={this.props.catToAdopt} />
-        <Pet info={this.props.dogToAdopt} />
+        <Pet info={this.props.catToAdopt} onAdoptPet={this.handleAdopt} />
+        <Pet info={this.props.dogToAdopt} onAdoptPet={this.handleAdopt}  />
     </div>
     )
   }

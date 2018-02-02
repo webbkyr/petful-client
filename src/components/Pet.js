@@ -3,7 +3,7 @@ import Header from './Header';
 import Button from './Button';
 
 export default function Pet(props){
-
+console.log(props)
 return (
     <section>
       <Header animalName={props.info.name} imageURL={props.info.imageURL} imageAlt={props.info.imageAlt} />
@@ -15,7 +15,7 @@ return (
           <li>Story: {props.info.story}</li>
         </ul>
       </main>
-      <Button />
+      <Button onAdoptPet={props.onAdoptPet} />
     </section>
     )
 }

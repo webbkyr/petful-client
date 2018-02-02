@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function Button(props) {
   return (
-    <button>Adopt</button>
+    <button onClick={() => props.onAdoptPet()}>Adopt</button>
   )
 }
