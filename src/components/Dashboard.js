@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Cats from './Cats';
-import Dogs from './Dogs';
+// import Cats from './Cats';
+// import Dogs from './Dogs';
+import Pet from './Pet'
 
 
 export class Dashboard extends Component {
@@ -11,12 +12,8 @@ export class Dashboard extends Component {
   render() {
     return (
     <div>
-      <section>
-        <Cats catToAdopt={this.props.catToAdopt} />
-      </section>
-      <section>
-        <Dogs dogToAdopt={this.props.dogToAdopt} />
-      </section>
+        <Pet info={this.props.catToAdopt} />
+        <Pet info={this.props.dogToAdopt} />
     </div>
     )
   }

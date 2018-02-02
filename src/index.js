@@ -4,6 +4,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import Dashboard from './components/Dashboard';
 
+//need to be in redux store
 const cats = [
   {
     imageURL:'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
@@ -28,5 +29,5 @@ const dogs = [
   }
 ]
 
-ReactDOM.render(<Dashboard catToAdopt={cats} dogToAdopt={dogs} />, document.getElementById('root'));
+ReactDOM.render(<Dashboard catToAdopt={cats[0]} dogToAdopt={dogs[0]} />, document.getElementById('root'));
 registerServiceWorker();
