@@ -3,14 +3,18 @@ import Header from './Header';
 import Button from './Button';
 
 export default function Dogs(props) {
-  const dog = props.dogToAdopt.map(dog => dog.name);
+  const dogName = props.dogToAdopt.map(dog => dog.name);
   return (
   <div>
-    <Header />
+    <Header animalName={dogName}/>
     <main>
-      {dog}
     </main>
     <Button />
   </div>
   )
 }
+
+//return (
+//   <img src={cat.imageURL} alt={cat.imageDescript}>
+// )
+// })
