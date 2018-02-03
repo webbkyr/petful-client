@@ -4,12 +4,9 @@ import Pet from './Pet'
 import About from './About';
 import { fetchDog, fetchCat, adoptCat, adoptDog } from '../actions/index';
 
-
 export class Dashboard extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
-
     this.handleAdoptCat = this.handleAdoptCat.bind(this);
     this.handleAdoptDog = this.handleAdoptDog.bind(this);
 
@@ -50,7 +47,6 @@ export class Dashboard extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('MS2P', state)
    return {
      catToAdopt: Object.assign({}, state.catReducer.data, {loading: state.catReducer.loading}),
      dogToAdopt: Object.assign({}, state.dogReducer.data, {loading: state.dogReducer.loading}),
@@ -60,17 +56,3 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps)(Dashboard);
 
-//dogToAdopt: Object.assign({}, state.dogReducer.data, {loading: state.dogReducer.loading}),
-
-
-
-//Why doesnt this work
-// const mapStateToProps = state => {
-//   console.log(state)
-//    return {
-//      catToAdopt: state.catReducer.data,
-//      dogToAdopt: state.dogReducer.data,
-//      loading: state.dogReducer.loading
-//    }
-
-// }

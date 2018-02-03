@@ -32,7 +32,6 @@ export const adoptCatRequest = () => {
   }
 }
 
-//revisit this
 export const adoptCatSuccess = () => {
   return {
     type: ADOPT_CAT_SUCCESS
@@ -45,7 +44,6 @@ export const adoptCatError = (err) => {
     err
   }
 }
-
 
 export const fetchCat = () => dispatch => {
    dispatch(fetchCatRequest());
@@ -70,7 +68,6 @@ export const adoptCat = () => dispatch => {
         if (!res.ok) {
           return Promise.reject(res.statusText);
         }
-        console.log(res.message);
         dispatch(fetchCat());
       })
       .catch(err => adoptCatError(err));

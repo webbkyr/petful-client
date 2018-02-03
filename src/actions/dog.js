@@ -32,7 +32,6 @@ export const adoptDogRequest = () => {
   }
 }
 
-//revist this
 export const adoptDogSuccess = () => {
   return {
     type: ADOPT_DOG_SUCCESS
@@ -70,7 +69,6 @@ export const adoptDog = () => dispatch => {
         if (!res.ok) {
           return Promise.reject(res.statusText);
         }
-        console.log(res)
         dispatch(fetchDog());
       })
       .catch(err => adoptDogError(err));
