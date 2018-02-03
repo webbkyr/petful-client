@@ -17,7 +17,7 @@ li {
   text-align: center;
 }
 
-.detail-list {
+.detail-list, #none-left {
   color:#eff6e0;
 
 }
