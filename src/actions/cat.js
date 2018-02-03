@@ -70,6 +70,7 @@ export const adoptCat = () => dispatch => {
         if (!res.ok) {
           return Promise.reject(res.statusText);
         }
+        console.log(res.message);
         dispatch(fetchCat());
       })
       .catch(err => adoptCatError(err));

@@ -70,6 +70,7 @@ export const adoptDog = () => dispatch => {
         if (!res.ok) {
           return Promise.reject(res.statusText);
         }
+        console.log(res)
         dispatch(fetchDog());
       })
       .catch(err => adoptDogError(err));

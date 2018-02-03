@@ -9,7 +9,7 @@ return (
     <section>
       <Header animalName={props.info.name} imageURL={props.info.imageURL} imageAlt={props.info.imageDescription} />
       <main>
-        <ul>
+        <ul className='detail-list'>
          <li>Sex: {props.info.sex}</li>
           <li>Age: {props.info.age}</li>
           <li>Breed: {props.info.breed}</li>

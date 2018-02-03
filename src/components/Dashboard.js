@@ -38,6 +38,7 @@ export class Dashboard extends Component {
   render() {
     return (
     <div>
+        <h1 className='main-header'>Adoption Bank</h1>
         {this.renderData()}
         <Pet info={this.props.catToAdopt} buttonText='Adopt Cat' onAdoptPet={this.handleAdoptCat} />
         <Pet info={this.props.dogToAdopt} buttonText='Adopt Dog' onAdoptPet={this.handleAdoptDog} />
