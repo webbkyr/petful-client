@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '../config';
+import { REACT_APP_API_BASE_URL } from '../config';
 export const FETCH_DOG_REQUEST = 'FETCH_DOG_REQUEST';
 export const FETCH_DOG_SUCCESS = 'FETCH_DOG_SUCCESS';
 export const FETCH_DOG_ERROR = 'FETCH_DOG_ERROR';
@@ -47,7 +47,7 @@ export const adoptDogError = (err) => {
 
 export const fetchDog = () => dispatch => {
    dispatch(fetchDogRequest());
-     fetch(`${API_BASE_URL}/api/dog`, {
+     fetch(`${REACT_APP_API_BASE_URL}/api/dog`, {
       method: 'GET',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
     }).then(res => {
@@ -62,7 +62,7 @@ export const fetchDog = () => dispatch => {
 export const adoptDog = () => dispatch => {
   console.log('Adopt Action Dispatch DOG')
    dispatch(adoptDogRequest());
-     fetch(`${API_BASE_URL}/api/dog`, {
+     fetch(`${REACT_APP_API_BASE_URL}/api/dog`, {
       method: 'DELETE'})
       .then(res => {
         console.log('response on delete', res)
