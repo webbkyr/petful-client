@@ -8,6 +8,7 @@ const initialState = {
 }
 
 export const catReducer = (state=initialState, action) => {
+  
 switch (action.type) {
   case FETCH_CAT_REQUEST:
   return {...state, loading: true}

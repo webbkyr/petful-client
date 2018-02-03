@@ -3,7 +3,7 @@ import { FETCH_DOG_REQUEST, FETCH_DOG_SUCCESS, FETCH_DOG_ERROR , ADOPT_DOG_REQUE
 const initialState = {
   data: null,
   error: null,
-  loading: false
+  loading: false,
 }
 
 export const dogReducer = (state=initialState, action) => {

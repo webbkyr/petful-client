@@ -56,20 +56,22 @@ export const fetchDog = () => dispatch => {
         return Promise.reject(res.statusText);
       }
       return res.json();
-    }).then(dog => dispatch(fetchDogSuccess(dog)))
+    }).then(data => dispatch(fetchDogSuccess(data)))
     .catch(err => dispatch(fetchDogError(err)))
 }
 
 export const adoptDog = () => dispatch => {
+  console.log('Adopt Action Dispatch DOG')
    dispatch(adoptDogRequest());
      fetch(`${API_BASE_URL}/api/dog`, {
       method: 'DELETE'})
       .then(res => {
+        console.log('response on delete', res)
         if (!res.ok) {
           return Promise.reject(res.statusText);
         }
-        return res.json();
-      }).then(dog => dispatch(fetchDog()))
+        dispatch(fetchDog());
+      })
       .catch(err => adoptDogError(err));
 
 }

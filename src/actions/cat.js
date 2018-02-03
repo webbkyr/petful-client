@@ -49,7 +49,7 @@ export const adoptCatError = (err) => {
 
 export const fetchCat = () => dispatch => {
    dispatch(fetchCatRequest());
-     fetch(`${API_BASE_URL}/api/cat`, {
+     return fetch(`${API_BASE_URL}/api/cat`, {
       method: 'GET',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'},
     }).then(res => {
@@ -57,11 +57,12 @@ export const fetchCat = () => dispatch => {
         return Promise.reject(res.statusText);
       }
       return res.json();
-    }).then(cat => dispatch(fetchCatSuccess(cat)))
+    }).then(data => dispatch(fetchCatSuccess(data)))
     .catch(err => dispatch(fetchCatError(err)))
 }
 
 export const adoptCat = () => dispatch => {
+  console.log('Adopt Cat Action')
    dispatch(adoptCatRequest());
      fetch(`${API_BASE_URL}/api/cat`, {
       method: 'DELETE'})
@@ -69,8 +70,8 @@ export const adoptCat = () => dispatch => {
         if (!res.ok) {
           return Promise.reject(res.statusText);
         }
-        return res.json();
-      }).then(dog => dispatch(fetchCat()))
+        dispatch(fetchCat());
+      })
       .catch(err => adoptCatError(err));
 
 }
