@@ -1,0 +1,19 @@
+.adopt-button {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    color: #ffffff;
+    font-size: 20px;
+    background: #598392;
+    padding: 10px 20px 10px 20px;
+    border: solid #1f628d 3px;
+    text-decoration: none;
+}
+
+.adopt-button:hover {
+    background: 	#aec3b0;
+    text-decoration: none;
+}

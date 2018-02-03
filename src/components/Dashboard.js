@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Pet from './Pet'
+import About from './About';
 import { fetchDog, fetchCat, adoptCat, adoptDog } from '../actions/index';
 
 
@@ -39,6 +40,7 @@ export class Dashboard extends Component {
     return (
     <div>
         <h1 className='main-header'>Adoption Bank</h1>
+        <About />
         {this.renderData()}
         <Pet info={this.props.catToAdopt} buttonText='Adopt Cat' onAdoptPet={this.handleAdoptCat} />
         <Pet info={this.props.dogToAdopt} buttonText='Adopt Dog' onAdoptPet={this.handleAdoptDog} />

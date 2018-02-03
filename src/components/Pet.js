@@ -4,8 +4,6 @@ import Button from './Button';
 import './Pet.css'
 
 export default function Pet(props){
-  console.log('Pet Props', props)
-
   let details = <ul className='detail-list'>
   <li>Sex: {props.info.sex}</li>
    <li>Age: {props.info.age}</li>
@@ -14,7 +12,6 @@ export default function Pet(props){
  </ul>
 
  let noneLeft = <p id='none-left'>{props.info.message}</p>
-//  style={{'display':(this.props.isModalOpen)?'block':'none'}}
 return (
     <section>
       {props.info.message ? null : <Header animalName={props.info.name} imageURL={props.info.imageURL} imageAlt={props.info.imageDescription} />}
