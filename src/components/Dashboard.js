@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Spinner from 'react-spinkit';
 import Pet from './Pet'
 import About from './About';
 import { fetchDog, fetchCat, adoptCat, adoptDog } from '../actions/index';
+import './Dashboard.css'
 
 export class Dashboard extends Component {
   constructor(props) {
@@ -14,6 +16,8 @@ export class Dashboard extends Component {
   componentDidMount() {
     this.props.dispatch(fetchDog());
     this.props.dispatch(fetchCat());
+    console.log(this.props)
+
   }
 
   handleAdoptCat(){
@@ -25,11 +29,11 @@ export class Dashboard extends Component {
   }
 
   renderData() {
-    if (this.props.loading) {
-      return <h1>'Loading'</h1>;
+    if (this.props.catToAdopt.loading || this.props.dogToAdopt.loading) {
+      return <Spinner id='spinner' name="ball-pulse-rise" color="red" fadeIn='none'/>
     }
-    if (this.props.error) {
-      return <p>{this.props.error}</p>
+    if (this.props.catToAdopt.error || this.props.dogToAdopt.error) {
+      return <p>{this.props.catToAdopt.error || this.props.dogToAdopt.error}</p>
     }
   }
 
